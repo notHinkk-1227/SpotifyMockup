@@ -7,5 +7,5 @@ data class Playlist(
     val title: String,
     val description: String,
     val coverColor: Color,
-    val songs: List<Song>
+    val songs: List<Song> = emptyList()
 )
