@@ -19,8 +19,11 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.style.TextOverflow
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.example.spotifymockup.data.DummyDataProvider.songs
 import com.example.spotifymockup.model.Playlist
+import com.example.spotifymockup.ui.theme.SpotifyMockupTheme
 
 @Composable
 fun PlaylistCard(playlist: Playlist, onClick: (Playlist) -> Unit) {
@@ -56,6 +59,17 @@ fun PlaylistCard(playlist: Playlist, onClick: (Playlist) -> Unit) {
             color = MaterialTheme.colorScheme.onSurfaceVariant,
             maxLines = 2,
             overflow = TextOverflow.Ellipsis
+        )
+    }
+}
+
+@Preview
+@Composable
+fun PlaylistCardPreview() {
+    SpotifyMockupTheme{
+        PlaylistCard(
+            playlist = Playlist(1, "Daily Mix 1", "Dibuat khusus untuk kamu", Color(0xFF8E44AD), songs.take(4)),
+            onClick = {}
         )
     }
 }
